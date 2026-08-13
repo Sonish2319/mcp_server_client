@@ -1,0 +1,99 @@
+# =========================
+# laravel-blog
+# =========================
+
+laravel-blog/.env
+laravel-blog/.env.*
+!laravel-blog/.env.example
+
+laravel-blog/vendor/
+laravel-blog/node_modules/
+laravel-blog-blog/public/hot
+laravel-blog/public/storage
+
+laravel-blog/storage/*.key
+laravel-blog/storage/app/*
+laravel-blog/storage/framework/cache/*
+laravel-blog/storage/framework/sessions/*
+laravel-blog/storage/framework/testing/*
+laravel-blog/storage/framework/views/*
+laravel-blog/storage/logs/*
+
+laravel-blog/bootstrap/cache/*
+!laravel-blog/bootstrap/cache/.gitignore
+
+laravel-blog/public/build/
+laravel-blog/.phpunit.result.cache
+laravel-blog/phpunit.xml
+laravel-blog/.idea/
+laravel-blog/.vscode/
+
+# =========================
+# django-ai-chat
+# =========================
+
+django-ai-chat/.env
+django-ai-chat/.env.*
+!django-ai-chat/.env.example
+
+django-ai-chat/venv/
+django-ai-chat/.venv/
+django-ai-chat/env/
+django-ai-chat/ENV/
+
+django-ai-chat/__pycache__/
+django-ai-chat/**/__pycache__/
+*.py[cod]
+*$py.class
+
+django-ai-chat/*.sqlite3
+django-ai-chat/db.sqlite3
+
+django-ai-chat/staticfiles/
+django-ai-chat/media/
+django-ai-chat/static/
+django-ai-chat/.pytest_cache/
+django-ai-chat/.coverage
+django-ai-chat/htmlcov/
+
+django-ai-chat/.mypy_cache/
+django-ai-chat/.ruff_cache/
+django-ai-chat/.tox/
+django-ai-chat/.nox/
+
+django-ai-chat/.idea/
+django-ai-chat/.vscode/
+
+# =========================
+# Python tooling
+# =========================
+
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# =========================
+# OS / IDE
+# =========================
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# =========================
+# Logs
+# =========================
+
+*.log
+
+# =========================
+# Temporary files
+# =========================
+
+*.tmp
+*.temp
