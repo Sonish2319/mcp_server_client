@@ -9,7 +9,6 @@ from chatbot.services.tool_adapter import (
     MCPToolAdapter,
 )
 
-
 class ChatService:
 
     SYSTEM_PROMPT = (
@@ -25,6 +24,7 @@ class ChatService:
     def __init__(
         self,
         mcp_url: str,
+        token: str,
         model: str = "qwen3:4b",
     ):
         self.ollama = OllamaService(
@@ -32,7 +32,8 @@ class ChatService:
         )
 
         self.mcp = MCPClient(
-            mcp_url
+            mcp_url,
+            token,
         )
 
         self.messages = [
@@ -120,10 +121,10 @@ class ChatService:
                     function["arguments"]
                 )
 
-                print(
-                    f"\n[MCP] Calling "
-                    f"{tool_name}({arguments})"
-                )
+                # print(
+                #     f"\n[MCP] Calling "
+                #     f"{tool_name}({arguments})"
+                # )
 
                 # -------------------------------------------------
                 # Execute the actual MCP tool.
@@ -142,10 +143,10 @@ class ChatService:
                     )
                 )
 
-                print(
-                    f"[MCP] Result: "
-                    f"{result_text}"
-                )
+                # print(
+                #     f"[MCP] Result: "
+                #     f"{result_text}"
+                # )
 
                 # -------------------------------------------------
                 # Give the tool result back to the LLM.

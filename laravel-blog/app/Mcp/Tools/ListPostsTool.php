@@ -33,6 +33,18 @@ class ListPostsTool extends Tool
 
     public function handle(Request $request): Response
     {
+
+    $user = $request->user();
+
+    if (! $user || ! $user->can('post.view')) {
+        return Response::text(
+            json_encode([
+                'success' => false,
+                'message' => 'You are not authorized to view blog posts.',
+            ], JSON_UNESCAPED_SLASHES)
+        );
+    }
+
         $limit = (int) $request->get('limit', 10);
 
         $limit = min(

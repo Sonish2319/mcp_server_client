@@ -37,6 +37,17 @@ class DeletePostTool extends Tool
 
     public function handle(Request $request): Response
     {
+        $user = $request->user();
+
+        if (! $user || ! $user->can('post.delete')) {
+        return Response::text(
+            json_encode([
+                'success' => false,
+                'message' => 'You are not authorized to delete blog posts.',
+            ], JSON_UNESCAPED_SLASHES)
+        );
+    }
+
         $validated = $request->validate([
             'id' => [
                 'required',

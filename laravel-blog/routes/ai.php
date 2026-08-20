@@ -3,4 +3,7 @@
 use App\Mcp\Servers\BlogServer;
 use Laravel\Mcp\Facades\Mcp;
 
-Mcp::web('/mcp/blog', BlogServer::class);
+Mcp::web('/mcp/blog', BlogServer::class)->middleware([
+    'auth:sanctum',
+    // 'mcp.authz',
+]);

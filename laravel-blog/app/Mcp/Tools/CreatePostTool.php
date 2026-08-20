@@ -50,6 +50,18 @@ class CreatePostTool extends Tool
 
     public function handle(Request $request): Response
     {
+
+        $user = $request->user();
+
+        if (! $user || ! $user->can('post.create')) {
+            return Response::text(
+                json_encode([
+                    'success' => false,
+                    'message' => 'You are not authorized to create blog posts.',
+                ], JSON_UNESCAPED_SLASHES)
+            );
+        }
+
         $validated = $request->validate([
             'title' => [
                 'required',
